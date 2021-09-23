@@ -65,11 +65,11 @@ public class Category implements Serializable {
 	public void prePersist() {
 		createdAt = Instant.now();
 	}
-	
+
 	@PreUpdate
 	public void preUpdate() {
-	updatedAt = Instant.now();
-	
+		updatedAt = Instant.now();
+
 	}
 
 	@Override
@@ -88,7 +88,5 @@ public class Category implements Serializable {
 		Category other = (Category) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
 
 }
