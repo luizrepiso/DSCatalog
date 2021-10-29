@@ -4,18 +4,21 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import com.devsuperior.dscatalog.entities.User;
 
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+	
+	@NotBlank(message = "Campo obrigatório")
 	private String firstName;
-	public Set<RoleDTO> getRoles() {
-		return roles;
-	}
-
 	private String lastName;
+	
+	@Email(message = "Favor entrar um email válido")
 	private String email;
 
 	Set<RoleDTO> roles = new HashSet<>();
@@ -38,6 +41,10 @@ public class UserDTO implements Serializable {
 		email = entity.getEmail();
 		entity.getRoles().forEach(role -> this.roles.add(new RoleDTO(role)));
 		
+	}
+
+	public Set<RoleDTO> getRoles() {
+		return roles;
 	}
 
 	public Long getId() {
