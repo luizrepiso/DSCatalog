@@ -63,7 +63,7 @@ public class User implements UserDetails, Serializable {
 
 	}
 
-	public String getFirtsName() {
+	public String getFirstName() {
 		return firstName;
 	}
 
