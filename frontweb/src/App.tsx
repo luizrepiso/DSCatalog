@@ -1,8 +1,9 @@
+import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <h1>hello DSCatalog</h1>
+    <h1>Hello DSCatalog</h1>
   );
 }
 export default App;
