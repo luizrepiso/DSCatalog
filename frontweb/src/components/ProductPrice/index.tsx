@@ -1,3 +1,4 @@
+import { formatPrice } from 'util/formaters';
 import './styles.css';
 
 type Props = {
