@@ -1,5 +1,7 @@
 import './styles.css';
 
+import ProductImg from 'assets/images/product.png';
+
 import { Product } from 'types/product';
 import ProductPrice from 'components/ProductPrice';
 
@@ -14,7 +16,7 @@ const ProductCard = ({ product } : Props) => {
 
         <div className="base-card product-card">
             <div className="card-top-container">
-                <img src={product.imgUrl} alt={product.name} />
+                <img src={ProductImg} alt={product.name} />
                 </div>
                 <div className="card-bottom-container">
                 <h6>{product.name}</h6>
