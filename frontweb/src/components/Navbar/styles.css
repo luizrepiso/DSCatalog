@@ -1,6 +1,11 @@
 .main-nav {
-    padding-left: 70px;
+    padding-left: 40px;
     min-height: 70px;
+}
+.main-nav li{
+    display: flex;
+    justify-content: space-around;
+
 }
 .nav-logo-text, .nav-logo-text:hover {
     color: #fff;   
