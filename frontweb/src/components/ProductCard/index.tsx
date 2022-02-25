@@ -5,7 +5,7 @@ import ProductImg from 'assets/images/product.png';
 import { Product } from 'types/product';
 import ProductPrice from 'components/ProductPrice';
 
-type  Props = {
+type Props = {
 
     product: Product;
 }
