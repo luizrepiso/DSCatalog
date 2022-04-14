@@ -22,7 +22,7 @@ const [hasError, setHasError] = useState(false);
     requestBackendLogin(formData)
       .then((response) => {
         saveAuthData(response.data);
-        const token = getAuthData().acess_token;
+        const token = getAuthData().access_token;
         console.log('TOKEN GERADO: ' + token);
           setHasError(false);
         console.log('SUCESSO', response);
