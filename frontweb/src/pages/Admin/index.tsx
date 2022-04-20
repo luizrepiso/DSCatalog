@@ -2,7 +2,7 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 
 import './styles.css';
-import Users from './Users';
+import Users from './User';
 
 const Admin = () => {
   return (
