@@ -2,17 +2,28 @@ import { Link, useHistory } from 'react-router-dom';
 import ButtonIcon from 'components/ButtonIcon';
 
 import { useForm } from 'react-hook-form';
-
+import { useLocation } from 'react-router-dom';
 import './styles.css';
-import { getAuthData, requestBackendLogin, saveAuthData } from 'util/requests';
-import { useState } from 'react';
+import {getTokenData, requestBackendLogin, saveAuthData } from 'util/requests';
+import { useContext, useState } from 'react';
+import { AuthContext } from 'AuthContext';
 
 type FormData = {
   username: string;
   password: string;
 };
 
+type LocationState = {
+  from: string;
+}
+
 const Login = () => {
+
+  const location = useLocation<LocationState>();
+
+  const { from } = location.state || { from: { pathname: 'admin'} }
+
+  const {setAuthContextData} = useContext(AuthContext);
 
 const [hasError, setHasError] = useState(false);
 
@@ -24,11 +35,14 @@ const [hasError, setHasError] = useState(false);
     requestBackendLogin(formData)
       .then((response) => {
         saveAuthData(response.data);
-        const token = getAuthData().access_token;
-        console.log('TOKEN GERADO: ' + token);
-          setHasError(false);
-        console.log('SUCESSO', response);
-        history.push('/admin');
+       setHasError(false);
+   setAuthContextData({
+    authenticated: true,
+    tokenData: getTokenData(),
+
+   })
+
+        history.replace(from);
       })
       .catch((error) => {
         setHasError(true);
