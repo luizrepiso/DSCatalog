@@ -17,8 +17,7 @@ const Navbar = () => {
           </NavLink>
         </li>
         {hasAnyRoles(['ROLE_ADMIN']) && (
-          <li>
-            <NavLink to="/admin/users" className="admin-nav-item">
+          <li>            <NavLink to="/admin/users" className="admin-nav-item">
               <p>Usuários</p>
             </NavLink>
           </li>
