@@ -9,7 +9,7 @@ export type TokenData = {
   authorities: Role[];
 };
 
-export const getTokenData = (): TokenData | undefined => {
+export const getTokenData = () : TokenData | undefined => {
   try {
     return jwtDecode(getAuthData().access_token) as TokenData;
   } catch (error) {
