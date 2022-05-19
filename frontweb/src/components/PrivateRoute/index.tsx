@@ -23,7 +23,7 @@ const PrivateRoute = ({ children, path }: Props) => {
           <Redirect to ="/admin/products"/>
         ):(
           <>
-           children 
+           {children}
            </>
         )
       }

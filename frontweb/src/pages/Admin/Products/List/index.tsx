@@ -1,4 +1,4 @@
-import ProductCrudCard from 'components/ProductCrudCard';
+import ProductCrudCard from 'pages/Admin/Products/ProductCrudCard';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
@@ -15,9 +15,13 @@ const List = () => {
     date: '2020-07-13T20:50:07.123450Z',
     categories: [
       {
-        id: 2,
+        id: 1,
         name: 'Eletrônicos',
       },
+      {
+      id: 2,
+      name: 'Computadores',
+      }
     ],
   };
 
