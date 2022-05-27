@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Product } from 'types/product';
 import { SpringPage } from 'types/vendor/spring';
 import { requestBackend } from 'util/requests';
+import ProductFilter from 'components/ProductFilter';
 
 import './styles.css';
 
@@ -55,7 +56,7 @@ const getProducts = useCallback(() => {
             ADICIONAR
           </button>
         </Link>
-        <div className="base-card product-filter-container ">Search bar</div>
+       <ProductFilter/>
       </div>
       <div className="row">
         {page?.content.map((product) => (
