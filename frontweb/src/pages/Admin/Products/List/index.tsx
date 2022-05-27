@@ -56,7 +56,7 @@ const getProducts = useCallback(() => {
             ADICIONAR
           </button>
         </Link>
-       <ProductFilter/>
+       <ProductFilter />
       </div>
       <div className="row">
         {page?.content.map((product) => (
