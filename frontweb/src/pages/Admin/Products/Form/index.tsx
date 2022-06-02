@@ -7,7 +7,7 @@ import { requestBackend } from 'util/requests';
 import Select from 'react-select';
 import { Category } from 'types/category';
 import CurrencyInput from 'react-currency-input-field';
-
+import { toast } from 'react-toastify';
 import './styles.css';
 
 type UrlParams = {
@@ -62,8 +62,13 @@ const Form = () => {
     };
 
     requestBackend(config).then(() => {
+      toast.info('Produto cadastrado com sucesso');
       history.push('/admin/products');
-    });
+    })
+    .catch(() => {
+
+      toast.error('Erro ao cadastrar produto')
+    })
   };
 
   const handleCancel = () => {
